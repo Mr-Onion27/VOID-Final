@@ -1,0 +1,111 @@
+
+#fac_log {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    width: 350px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    position: relative;
+    justify-self: center;
+    align-self: center;
+    margin-top: 150px;
+  }
+  
+  .c2 h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #f3f3f3;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #user,
+  input[type="password"],
+  input[type="submit"] {
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+  }
+  
+#user,
+input[type="password"] {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #f1f1f1;
+  }
+  
+  input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  input[type="submit"]:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+  
+  .password-container {
+    position: relative;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+  }
+  .notification {
+    position: fixed; /* Use fixed so it stays in place even on scroll */
+    top: 20px;        /* Distance from top */
+    left: 50%;        /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to true center */
+    background-color: #ffffff62;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 99;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+  }
+  
+  .notification i {
+    font-size: 18px;
+  }
+  
+  .close-btn {
+    margin-left: auto;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  a {
+    color: #a1c4fd;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 5px 0 15px;
+    text-align: right;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }

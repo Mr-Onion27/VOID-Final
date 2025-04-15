@@ -1,0 +1,554 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables for consistency */
+:root {
+  --primary-color: #27283f;
+  --secondary-color: #414141;
+  --white: #ffffff;
+  --black: #000000;
+  --gray-color: #f8f9fa;
+  --text-dark: rgba(0, 0, 0, 0.7);
+  --text-light: rgba(255, 255, 255, 0.7);
+}
+
+body, html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #27283f;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto auto;
+  padding: 10px;
+  justify-items: center;
+  align-self: center;
+}
+
+/* Navigation with static styles */
+.navbar {
+  background-color: rgb(255, 255, 255);
+  padding: 15px 15px 15px 5px;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  z-index: 100;
+}
+
+.navbar-light .navbar-nav {
+  list-style-type: none; /* Remove bullet points */
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin: 0 0.5rem;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  opacity: 0.8;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: var(--primary-color);
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-color: var(--primary-color);
+}
+
+.navbar,
+.navbar-collapse,
+.navbar-light {
+  padding: 0 15px;
+  
+}
+/* Add these rules to your existing CSS */
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  /*margin: 0 0.5rem;*/
+  text-decoration: none; /* Remove underline */
+}
+@media (min-width: 992px) {
+  .navbar,
+  .navbar-collapse,
+  .navbar-light {
+    padding: 0 150px;
+  }
+}
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Center the navigation items */
+.navbar-collapse {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+/* Remove the ms-auto class from navbar-nav in your HTML */
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 7px auto; /* Center the nav items */
+  margin-left: 250px;
+  justify-self: center;
+  justify-items: center;
+  text-align: center;
+  margin-right: 250px;
+
+
+}
+
+
+/* Space out nav links evenly */
+.navbar-light .navbar-nav .nav-link {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0 1rem; /* Increase horizontal spacing between links */
+  text-decoration: none;
+  align-self: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    justify-content: flex-start;
+  }
+  
+  .navbar-nav {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+/* General toggler styles */
+.navbar-toggler {
+  background-color: var(--white); /* or #fff */
+  border: none;
+  border-radius: 5px;
+  display: none; /* hidden on desktop by default */
+  margin-top: 45px;
+  position: fixed;
+}
+
+/* Custom icon size */
+.menu-icon {
+  width: 40px;
+  height: 40px;
+}
+
+/* Show toggler on small screens */
+@media (max-width: 992px) {
+  .navbar-toggler {
+    display: block;
+  }
+
+  .navbar-collapse {
+    background-color: var(--white); /* Solid background when open */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navbar-nav .nav-link {
+    color: var(--black);
+    font-weight: 500;
+  }
+}
+
+/* On large screens: horizontal layout */
+@media (min-width: 993px) {
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .navbar-collapse {
+    display: flex !important;
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+  }
+}
+
+
+/* Masthead */
+.masthead-container {
+  width: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.masthead {
+  background: linear-gradient(to bottom, rgba(45, 46, 49, 0.5) 0%, rgba(7, 7, 46, 0.5) 100%),url(bg-masthead.jpg);
+  margin-top: 0;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  min-height: 100vh;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.masthead .text-white {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.masthead .btn {
+  background-color: var(--white);
+  color: var(--black);
+  font-weight: 600;
+  padding: 15px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex; /* Changed from inline-block to flex */
+  align-items: center; /* This centers items vertically */
+  border: none;
+  margin-top: 1.5rem;
+}
+
+/* You might also want to add a little space between the image and text */
+.masthead .btn img {
+  margin-right: 10px; /* This ensures consistent spacing between image and text */
+}
+
+.masthead .btn:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.masthead .divider {
+  border-top: 2px solid var(--white);
+  width: 50px;
+  margin: 1.5rem auto;
+}
+
+.masthead .login-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* About Section */
+#about {
+  background-color: var(--white);
+  padding: 5rem 0;
+  color: var(--primary-color);
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#about .divider-light {
+  border-top: 2px solid var(--primary-color);
+  width: 60px;
+  margin: 1.5rem auto;
+}
+
+#about p {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* This is the key part to center the button */
+#about .text-center .btn-light {
+  background-color: var(--primary-color);
+  color: var(--white);
+  font-weight: 600;
+  padding: .75rem 1.5rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  /* Remove align-self: center; as it doesn't work here */
+}
+
+/* Add this if you want additional centering container */
+#about .button-container {
+  display: flex;
+  justify-content: center;
+}
+
+#about .btn-light:hover {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+/* Services Section with Feature Icons */
+#services {
+  padding: 5rem 0;
+  background-color: var(--primary-color);
+}
+
+i {
+  font-size: 3rem;
+  color: white;
+}
+
+
+#services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+  text-align: center;
+}
+
+#services .divider {
+  border-top: 2px solid var(--white);
+  width: 60px;
+  margin: 1.5rem auto;
+}
+
+#services .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+#services .col-lg-3 {
+  flex: 0 0 calc(25% - 2rem);
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background-color: var(--primary-color);
+}
+
+#services .col-lg-3:hover {
+  transform: translateY(-10px);
+}
+
+/* Styling for feature icons */
+#services .feature-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+#services h3 {
+  margin: 1rem 0;
+  color: var(--white);
+  font-size: 1.5rem;
+}
+
+#services p {
+  font-size: 1rem;
+  color: var(--white);
+  line-height: 1.6;
+}
+
+/* Portfolio Section */
+#portfolio {
+  padding: 5rem 0;
+  background-color: var(--white);
+  color: var(--primary-color);
+}
+
+#portfolio h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#portfolio .btn-xl {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  margin: 2rem 1rem 0rem 1rem;
+}
+
+#portfolio .btn-xl:hover {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Footer */
+footer {
+  background-color: rgba(81, 86, 105, 0.849);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+footer .text-muted {
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+footer .social-icons {
+  margin: 1rem 0;
+}
+
+footer .social-icons a {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: var(--black);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  #services .col-lg-3 {
+    flex: 0 0 calc(50% - 2rem);
+  }
+  
+  .masthead .text-white {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .masthead {
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+  
+  .masthead .text-white {
+    font-size: 2rem;
+  }
+
+  .masthead .btn {
+    padding: 0.5rem 1.2rem;
+  }
+
+  #about h2,
+  #services h2,
+  #portfolio h2,
+  #contact h2 {
+    font-size: 2rem;
+  }
+  
+  #services .col-lg-3 {
+    flex: 0 0 100%;
+  }
+  
+  .login-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .login-buttons .btn {
+    margin: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .masthead {
+    padding-top: 100px;
+  }
+  
+  .masthead .text-white {
+    font-size: 1.8rem;
+  }
+  
+  #about .btn-light {
+    padding: 0.5rem 1.5rem;
+  }
+  
+  .navbar-light  .nav-link {
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+  
+  #services .col-lg-3 {
+    padding: 1rem;
+  }
+}
+/* Hide the navbar toggler by default on all screen sizes */
+.navbar-toggler {
+  display: none;
+  height: 50px;
+  width: 50px;
+}
+
+/* Show the navbar toggler only on smaller screens and make links stack vertically */
+@media (max-width: 992px) {
+  .navbar-toggler {
+    display: block;
+  }
+
+  /* When collapsed, make the navbar items stack vertically */
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  /* Hide the collapsed navbar by default */
+  .collapse:not(.show) {
+    display: none;
+  }
+}
+
+/* Keep navbar items in a row on larger screens */
+@media (min-width: 993px) {
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  /* Always show navbar on desktop */
+  .navbar-collapse {
+    display: flex !important;
+  }
+}
